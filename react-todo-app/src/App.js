@@ -1,22 +1,23 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './header';
+import InputTodo from './InputTodo';
 
-function App() {
 
-  return (
-    <div className="App">
-      <h1>TODO APP</h1>
+class App extends Component{
+  render(){
+    return (
+      <div className="App">
+        <Header/>
+        <InputTodo/>
+        
 
-      <from>
-        <input
-          type = "text"
-          name = "todo"
-          placeholder = "สิ่งที่อยากทำ"
-        />
-
-      </from>
-    </div>
-  );
+      </div>
+  
+      
+    );
+  }
 }
 
 export default App;
