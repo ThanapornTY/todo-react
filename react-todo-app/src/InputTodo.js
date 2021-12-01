@@ -3,21 +3,45 @@ import logo from './logo.svg';
 import './App.css';
 import { render } from "@testing-library/react";
 
-const InputTodo = () =>{
-    return(
-        <div>
-            <form className="input-text">
+class InputTodo extends Component {
+    state = {
+        title: "",
+    }
+    onChange = c => {
+        this.setState({
+            [c.target.name]: c.target.value,
+        })
+    }
+
+    handleSubmit = c => {
+        c.preventDefault();
+        if(this.state.title.trim()){
+            this.props.addTodoProps(this.state.title);
+            this.setState({
+                title: ""
+            });
+        }else{
+            alert("ยังไม่ได้พิมพ์อะไรลงไปเลยเว้ย!!!")
+        }
+    }
+
+    render(){
+        return (
+            <form onSubmit={this.handleSubmit} className="form-container">
                 <input
-                type="text"
-                placeholder="จะทำอะไรก็ใส่มาเด้!!!"
+                type = "text"
+                className = "input-textlist"
+                placeholder= "พิมพ์สิ่งที่อยากทำ.."
+                name="title"
+                onChange={this.onChange}
                 />
-                <button className="input-submit">Submit</button>
+
+                <button className="submit">Submit naja</button>
             </form>
-            
-            
-        </div>
-    );
-    
+        )
+    }
+
+
 }
 
 export default InputTodo;
