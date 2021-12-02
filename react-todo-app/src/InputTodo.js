@@ -35,11 +35,17 @@ class InputTodo extends Component {
                 name="title"
                 onChange={this.onChange}
                 />
-
-                <button className="submit">Submit naja</button>
+                <button className="submit">Submit</button>
+                <div className="select">
+                    <select className="filter-todo" name="Todos">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="uncompleted">Uncompleted</option>
+                    </select>
+                </div>
             </form>
         )
-    }
+    }  
 
 
 }
