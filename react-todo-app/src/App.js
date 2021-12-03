@@ -5,6 +5,7 @@ import Header from './header';
 import InputTodo from './InputTodo';
 import TodoList from './TodoList';
 
+
 class App extends Component{
   render(){
     return (
@@ -12,6 +13,7 @@ class App extends Component{
         <Header/>
         <InputTodo/>
         <TodoList/>
+        
       </div>
   
       
